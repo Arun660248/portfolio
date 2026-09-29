@@ -99,8 +99,9 @@
 
 ---
 
-### Milestone 4: Production GitHub Push & Domain Deployment (`arunjyoticode.me`) — [ PENDING USER GO-AHEAD ]
-* **Objective:** Commit all verified milestones cleanly to Git, push to GitHub (`github.com/Arun660248/portfolio`), and deploy on Vercel connected to `arunjyoticode.me`.
+### Milestone 4: Production GitHub Push & Domain Deployment (`arunjyoticode.me`) — [ IN PROGRESS ]
+* **GitHub Repository:** Successfully pushed to [`https://github.com/Arun660248/portfolio`](https://github.com/Arun660248/portfolio) on branch `main`.
+* **Vercel Deployment:** Ready for 1-click import into Vercel, adding `GEMINI_API_KEY`, and mapping custom domain `arunjyoticode.me`.
 
 ---
 
