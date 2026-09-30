@@ -66,9 +66,9 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased overflow-x-hidden`}
     >
-      <body className="min-h-full flex flex-col bg-black text-white relative selection:bg-emerald-500/30 selection:text-emerald-300">
+      <body className="min-h-full flex flex-col bg-black text-white relative selection:bg-emerald-500/30 selection:text-emerald-300 overflow-x-hidden w-full max-w-full">
         <AmbientBackground />
         <TelemetryPulseBar />
         <Header />

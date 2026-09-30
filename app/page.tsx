@@ -5,11 +5,11 @@ import GithubTelemetryWidget from "@/components/GithubTelemetryWidget";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white p-8 font-mono">
+    <main className="min-h-screen bg-black text-white p-4 sm:p-8 font-mono max-w-full overflow-x-hidden">
       <div className="max-w-4xl mx-auto space-y-6">
         <div className="inline-flex items-center gap-2 px-3 py-1 text-xs border border-emerald-500/40 bg-emerald-950/30 text-emerald-400 rounded">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          SYSTEM STATUS: ONLINE (LOCAL DEV)
+          SYSTEM STATUS: PRODUCTION (VERCEL EDGE)
         </div>
 
         <h1 className="text-3xl font-bold tracking-tight text-zinc-100">

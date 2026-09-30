@@ -58,7 +58,16 @@ export default function SystemDetailCockpit({
 
           <div className="flex items-center gap-2">
             {project.liveUrl && (
-              isOnline ? (
+              slug === "agentic-audit-harness" ? (
+                <button
+                  onClick={() => {
+                    window.dispatchEvent(new CustomEvent("open-arun-agent"));
+                  }}
+                  className="px-3 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs rounded transition-colors cursor-pointer"
+                >
+                  ⚡ RUN LIVE (ARUN.AI) ↗
+                </button>
+              ) : isOnline ? (
                 <a
                   href={project.liveUrl}
                   target="_blank"
@@ -308,14 +317,25 @@ export default function SystemDetailCockpit({
                 </p>
               </div>
               {project.liveUrl && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-3 py-1.5 rounded bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-bold transition-colors inline-block"
-                >
-                  TRY LIVE SYSTEM IN BROWSER ↗
-                </a>
+                slug === "agentic-audit-harness" ? (
+                  <button
+                    onClick={() => {
+                      window.dispatchEvent(new CustomEvent("open-arun-agent"));
+                    }}
+                    className="px-3 py-1.5 rounded bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-bold transition-colors cursor-pointer"
+                  >
+                    LAUNCH ARUN.AI AGENT IN BROWSER ↗
+                  </button>
+                ) : (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-3 py-1.5 rounded bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-bold transition-colors inline-block"
+                  >
+                    TRY LIVE SYSTEM IN BROWSER ↗
+                  </a>
+                )
               )}
             </div>
           </div>

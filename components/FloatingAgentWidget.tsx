@@ -48,6 +48,9 @@ export default function FloatingAgentWidget() {
 
   useEffect(() => {
     setMounted(true);
+    const handleOpen = () => setIsOpen(true);
+    window.addEventListener("open-arun-agent", handleOpen);
+
     try {
       const savedKey = localStorage.getItem("arun_gemini_key");
       if (savedKey) setApiKey(savedKey);
@@ -57,6 +60,7 @@ export default function FloatingAgentWidget() {
 
     return () => {
       stopSpeaking();
+      window.removeEventListener("open-arun-agent", handleOpen);
     };
   }, []);
 
@@ -220,6 +224,7 @@ export default function FloatingAgentWidget() {
       {/* Upper-Right Floating Trigger Button */}
       {!isOpen && (
         <button
+          id="agent-toggle-btn"
           onClick={() => setIsOpen(true)}
           className="fixed top-20 right-6 z-50 flex items-center gap-2 px-3.5 py-2 rounded-full bg-zinc-950/90 border border-emerald-500/40 text-emerald-400 text-xs font-bold shadow-[0_0_15px_rgba(16,185,129,0.2)] hover:bg-zinc-900 hover:border-emerald-400 hover:scale-105 transition-all group backdrop-blur-md"
         >

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ContactModal } from "@/components/ContactModal";
@@ -9,7 +9,12 @@ import { useSystemStatus } from "@/lib/hooks/useSystemStatus";
 export function Header() {
   const pathname = usePathname();
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { onlineCount, total } = useSystemStatus();
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
   const navLinks = [
     { href: "/", label: "CONSOLE" },
@@ -35,8 +40,8 @@ export function Header() {
           </span>
         </div>
 
-        {/* Center Nav Links */}
-        <nav className="flex items-center gap-1 sm:gap-2 text-xs">
+        {/* Center Nav Links (Desktop) */}
+        <nav className="hidden md:flex items-center gap-1 sm:gap-2 text-xs">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -76,7 +81,7 @@ export function Header() {
           <a
             href="/Arun_Jyoti_Chakraborty_Resume.pdf"
             download="Arun_Jyoti_Chakraborty_Resume.pdf"
-            className="px-2.5 py-1 rounded bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 hover:text-white text-xs transition-colors flex items-center gap-1"
+            className="hidden sm:flex px-2.5 py-1 rounded bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 hover:text-white text-xs transition-colors items-center gap-1"
           >
             <span>RESUME</span>
             <span className="text-emerald-400 font-bold">⤓</span>
@@ -88,6 +93,13 @@ export function Header() {
           >
             CONNECT
           </button>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white text-xs font-mono"
+            aria-label="Toggle Navigation"
+          >
+            {isMobileMenuOpen ? "✕" : "☰"}
+          </button>
           <a
             href="https://github.com/Arun660248"
             target="_blank"
@@ -98,6 +110,50 @@ export function Header() {
           </a>
         </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-md px-4 py-3 space-y-3 font-mono text-xs animate-in slide-in-from-top duration-150">
+          <div className="grid grid-cols-2 gap-2">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`px-3 py-2 rounded text-center transition-all ${
+                    isActive
+                      ? "text-emerald-400 bg-emerald-950/60 border border-emerald-500/40 font-bold"
+                      : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900 border border-zinc-900"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
+          <div className="pt-2 border-t border-zinc-900 flex items-center justify-between gap-2">
+            <a
+              href="/Arun_Jyoti_Chakraborty_Resume.pdf"
+              download="Arun_Jyoti_Chakraborty_Resume.pdf"
+              className="flex-1 text-center py-2 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs flex items-center justify-center gap-1"
+            >
+              <span>RESUME</span>
+              <span className="text-emerald-400 font-bold">⤓</span>
+            </a>
+            <a
+              href="https://github.com/Arun660248"
+              target="_blank"
+              rel="noreferrer"
+              className="flex-1 text-center py-2 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs"
+            >
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+      )}
+
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
     </header>
   );

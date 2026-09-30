@@ -309,7 +309,7 @@ async def analyze_stock(symbol: str):
     return {}`,
       },
     ],
-    githubUrl: "https://github.com/Arun660248/portfolio",
+    githubUrl: "https://github.com/Arun660248/autonomous-agentic-eval-harness",
     liveUrl: "/systems/agentic-audit-harness",
     evidenceSummary: "Self-hosted full-stack LangGraph harness running in Next.js with embedded SQLite memory and deterministic guardrails.",
   },

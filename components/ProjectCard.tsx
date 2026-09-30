@@ -95,7 +95,16 @@ export function ProjectCard({ project }: { project: Project }) {
           <span className="text-zinc-300">{project.evidenceSummary}</span>
         </div>
         {project.liveUrl && (
-          isOnline ? (
+          project.slug === "agentic-audit-harness" ? (
+            <button
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent("open-arun-agent"));
+              }}
+              className="text-emerald-400 hover:text-emerald-300 font-semibold underline decoration-emerald-800 cursor-pointer"
+            >
+              Run Live (ARUN.AI) ↗
+            </button>
+          ) : isOnline ? (
             <a
               href={project.liveUrl}
               target="_blank"
