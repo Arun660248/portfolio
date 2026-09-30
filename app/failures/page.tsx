@@ -55,7 +55,9 @@ export default function FailuresPage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 border border-zinc-800 bg-zinc-950/60 p-4 rounded-lg text-xs">
           <div>
             <div className="text-zinc-500 uppercase text-[10px]">Documented Incidents</div>
-            <div className="text-lg font-bold text-zinc-200 mt-0.5">05 Cases</div>
+            <div className="text-lg font-bold text-zinc-200 mt-0.5">
+              {String(failuresWithProjects.length).padStart(2, "0")} Cases
+            </div>
           </div>
           <div>
             <div className="text-zinc-500 uppercase text-[10px]">Mitigation Rate</div>
@@ -66,8 +68,8 @@ export default function FailuresPage() {
             <div className="text-lg font-bold text-zinc-200 mt-0.5">Isolated</div>
           </div>
           <div>
-            <div className="text-zinc-500 uppercase text-[10px]">Audit Status</div>
-            <div className="text-lg font-bold text-emerald-400 mt-0.5">Production Verified</div>
+            <div className="text-zinc-500 uppercase text-[10px]">Verification Scope</div>
+            <div className="text-sm font-bold text-emerald-400 mt-0.5">4 Live · 2 Dormant/Replay</div>
           </div>
         </div>
 

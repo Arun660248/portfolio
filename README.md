@@ -13,7 +13,7 @@
 
 ## 1. Executive Overview
 
-**ARUN.SYS** is an evidence-based Applied AI Systems Engineering portfolio and observability console developed by **Arun Jyoti Chakraborty** (2nd-Year B.Sc. Hons. Data Science & AI student at IIT Guwahati).
+**ARUN.SYS** is an evidence-based Applied AI Systems Engineering portfolio and observability console developed by **Arun Jyoti Chakraborty** (3rd-Year B.Sc. Hons. Data Science & AI student at IIT Guwahati).
 
 Unlike traditional static portfolios that rely on unsubstantiated bullet points, ARUN.SYS is engineered as an **interactive, production-grade AI observatory**. Every project is backed by interactive n8n architecture workflows, verifiable benchmark metrics, transparent forensic failure post-mortems, in-browser simulations, and real-time endpoint health telemetry.
 
@@ -174,7 +174,7 @@ npm run build
 ## 6. Author & Engineering Profile
 
 **Arun Jyoti Chakraborty**  
-*2nd-Year B.Sc. (Hons.) Data Science & Artificial Intelligence — IIT Guwahati*  
+*3rd-Year B.Sc. (Hons.) Data Science & Artificial Intelligence — IIT Guwahati*  
 - **Live Portfolio:** [https://www.arunjyoticode.me](https://www.arunjyoticode.me)  
 - **GitHub:** [@Arun660248](https://github.com/Arun660248)  
 - **LinkedIn:** [Arun Jyoti Chakraborty](https://www.linkedin.com/in/arun-jyoti-chakraborty/)  

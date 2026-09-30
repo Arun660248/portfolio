@@ -279,7 +279,7 @@ export default function SystemDetailCockpit({
 
               <div className="pt-2 border-t border-amber-500/20 flex flex-wrap items-center justify-between gap-2 text-xs">
                 <Link href="/failures" className="text-amber-400 hover:text-amber-300 transition-colors">
-                  VIEW GLOBAL INCIDENT DIRECTORY [ 5 CASES ] →
+                  VIEW GLOBAL INCIDENT DIRECTORY [ 6 CASES ] →
                 </Link>
                 <Link href="/evidence" className="text-zinc-400 hover:text-white transition-colors">
                   CLAIM-TO-EVIDENCE LEDGER ↗
@@ -299,44 +299,56 @@ export default function SystemDetailCockpit({
         <div className="space-y-6 animate-in fade-in duration-200">
           {slug === "agentic-audit-harness" && <InteractiveHarnessDemo />}
 
-          {/* Video Walkthrough Player Container */}
-          <div className="border border-zinc-800 bg-zinc-950/60 p-5 rounded-lg space-y-3">
+          {slug === "algorithmic-trading-agent" && <InteractiveQuantSimulator />}
+
+          {/* System Runtime & Verification Telemetry */}
+          <div className="border border-zinc-800 bg-zinc-950/60 p-5 rounded-lg space-y-4">
             <div className="flex items-center justify-between text-xs text-zinc-400 border-b border-zinc-900 pb-2">
-              <span className="font-bold text-zinc-200">60-SECOND ARCHITECTURAL VIDEO DEMO</span>
-              <span className="text-[10px] text-cyan-400 font-semibold">STATUS: STUDIO CONTAINER READY</span>
+              <span className="font-bold text-zinc-200">SYSTEM RUNTIME &amp; VERIFICATION TELEMETRY</span>
+              <span className="text-[10px] text-emerald-400 font-semibold">STATUS: VERIFIED</span>
             </div>
 
-            <div className="aspect-video rounded-lg bg-zinc-900/40 border border-dashed border-zinc-800 flex flex-col items-center justify-center text-center p-6 space-y-3">
-              <div className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-500 text-xl font-bold">
-                ▶
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-zinc-200">AWAITING ARUN&apos;S 60-SECOND RECORDING</h4>
-                <p className="text-xs text-zinc-500 max-w-md mt-1">
-                  Once recorded, this container streams Arun&apos;s live screen walkthrough with picture-in-picture narration.
+            <div className="p-4 rounded-lg bg-zinc-900/40 border border-zinc-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="space-y-1">
+                <h4 className="text-sm font-bold text-zinc-200">{project.title}</h4>
+                <p className="text-xs text-zinc-400 max-w-xl">
+                  {!project.liveUrl || slug === "algorithmic-trading-agent" || slug === "ai-financial-analyst"
+                    ? "Dormant AWS Infrastructure (Cost Optimized). Core architecture and verified 30-day backtest replay active."
+                    : "Active in production across verified cloud runtimes."}
                 </p>
               </div>
-              {project.liveUrl && (
-                slug === "agentic-audit-harness" ? (
-                  <button
-                    onClick={() => {
-                      window.dispatchEvent(new CustomEvent("open-arun-agent"));
-                    }}
-                    className="px-3 py-1.5 rounded bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-bold transition-colors cursor-pointer"
-                  >
-                    LAUNCH ARUN.AI AGENT IN BROWSER ↗
-                  </button>
-                ) : (
+
+              <div className="flex items-center gap-2">
+                {project.liveUrl && (
+                  slug === "agentic-audit-harness" ? (
+                    <button
+                      onClick={() => window.dispatchEvent(new CustomEvent("open-arun-agent"))}
+                      className="px-4 py-2 rounded bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-bold transition-colors cursor-pointer"
+                    >
+                      LAUNCH ARUN.AI ↗
+                    </button>
+                  ) : (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 rounded bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-bold transition-colors inline-block"
+                    >
+                      TRY LIVE RUNTIME ↗
+                    </a>
+                  )
+                )}
+                {project.githubUrl && (
                   <a
-                    href={project.liveUrl}
+                    href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-3 py-1.5 rounded bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-bold transition-colors inline-block"
+                    className="px-3 py-2 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-700 text-xs font-mono transition-colors"
                   >
-                    TRY LIVE SYSTEM IN BROWSER ↗
+                    CODE ↗
                   </a>
-                )
-              )}
+                )}
+              </div>
             </div>
           </div>
         </div>

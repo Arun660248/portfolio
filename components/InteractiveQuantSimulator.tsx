@@ -118,13 +118,13 @@ export default function InteractiveQuantSimulator() {
             <span className="text-xs text-zinc-500 font-bold">&gt;_</span>
             <h3 className="text-sm font-bold text-zinc-100 flex items-center gap-2">
               <span>INTERACTIVE QUANT SANDBOX &amp; ADVERSARIAL TESTER</span>
-              <span className="text-[10px] px-1.5 py-0.2 rounded bg-emerald-950 text-emerald-400 border border-emerald-800/50">
-                LIVE SIMULATION
+              <span className="text-[10px] px-1.5 py-0.2 rounded bg-amber-950/60 text-amber-400 border border-amber-800/50">
+                CLIENT-SIDE REPLAY
               </span>
             </h3>
           </div>
           <p className="text-[11px] text-zinc-500 mt-0.5">
-            Test the 1-Day ARIMA forecast cone and verify Google ADK adversarial prompt injection blocking live.
+            Test the 1-Day ARIMA forecast cone and verify adversarial prompt injection blocking live.
           </p>
         </div>
 
@@ -147,6 +147,19 @@ export default function InteractiveQuantSimulator() {
             </button>
           ))}
         </div>
+      </div>
+
+      {/* Infrastructure Scope Transparency */}
+      <div className="p-3 rounded-lg bg-zinc-900/60 border border-zinc-800 text-xs space-y-1">
+        <div className="text-amber-400 font-bold text-[10px] uppercase tracking-wider">
+          ⚡ Infrastructure Scope &amp; Simulation Mode:
+        </div>
+        <p className="text-zinc-400 text-[11px] leading-relaxed">
+          <strong className="text-zinc-200">Dormant AWS Backend:</strong> The 24/7 AWS EC2 instance running the live FastMCP tool server over HTTP/SSE is paused to eliminate idle cloud compute costs.
+        </p>
+        <p className="text-zinc-400 text-[11px] leading-relaxed">
+          <strong className="text-zinc-200">Active Live In Browser:</strong> This sandbox executes deterministic mathematical forecasting replayed against verified 30-day market feeds, and actively enforces Pytest-grade guardrail defense against adversarial prompt attacks.
+        </p>
       </div>
 
       {/* Grid: Forecast Chart & Stats */}
@@ -256,7 +269,7 @@ export default function InteractiveQuantSimulator() {
           </div>
 
           <div className="p-2 rounded bg-zinc-950/70 border border-zinc-800 text-[10px] text-zinc-400 leading-relaxed">
-            <span className="text-emerald-400 font-bold">FastMCP TOOL:</span> Executed via <code>pmdarima.auto_arima(seasonal=False)</code> over HTTP/SSE.
+            <span className="text-amber-400 font-bold">ARCHITECTURE CONTEXT:</span> Production executes via <code>pmdarima.auto_arima(seasonal=False)</code> on FastMCP over HTTP/SSE; in-browser sandbox renders verified 30D backtest replay.
           </div>
         </div>
       </div>

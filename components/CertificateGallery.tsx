@@ -140,7 +140,8 @@ export default function CertificateGallery() {
                 </h3>
                 {cert.credentialId && (
                   <div className="text-[10px] text-zinc-500 font-mono">
-                    ID: <span className="text-zinc-400">{cert.credentialId}</span>
+                    {cert.issuer.includes("AICTE") ? "COHORT ID: " : "ID: "}
+                    <span className="text-zinc-400">{cert.credentialId}</span>
                   </div>
                 )}
               </div>
@@ -235,7 +236,8 @@ export default function CertificateGallery() {
                 </span>
                 {activeCert.credentialId && (
                   <span>
-                    CREDENTIAL ID: <strong className="text-emerald-400 font-mono">{activeCert.credentialId}</strong>
+                    {activeCert.issuer.includes("AICTE") ? "AICTE STUDENT ID: " : "CREDENTIAL ID: "}
+                    <strong className="text-emerald-400 font-mono">{activeCert.credentialId}</strong>
                   </span>
                 )}
               </div>

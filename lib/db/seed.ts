@@ -62,7 +62,7 @@ export const SEED_FACTS: KnowledgeFact[] = [
     id: "fact-iitg",
     entity: "IIT Guwahati Academic Groundwork",
     category: "academic",
-    content: "Arun is a 2nd-year B.Sc. (Hons.) Data Science & AI student at IIT Guwahati with completed coursework in Time Series Analysis (DA 210), Machine Learning (DA 261), and Optimization (DA 203).",
+    content: "Arun is a 3rd-year B.Sc. (Hons.) Data Science & AI student at IIT Guwahati with completed coursework in Time Series Analysis (DA 210), Machine Learning (DA 261), and Optimization (DA 203).",
     targetRoute: "/about",
     claimMetric: "14 Verified IIT Guwahati Degree Courses",
   },

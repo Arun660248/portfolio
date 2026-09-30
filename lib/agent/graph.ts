@@ -92,7 +92,7 @@ ${state.query}`;
     } else if (path.includes("enterprise-rag")) {
       synthesis = "You are inspecting Arun's Enterprise Document RAG System on AWS EC2. It features hybrid BM25 + FAISS dense retrieval and incorporates an asynchronous lock coordinator that mitigated reader-writer contention, reducing research latency by 85%.";
     } else if (path.includes("about")) {
-      synthesis = "You are on Arun's About page, showcasing his background as a 2nd-year B.Sc. Data Science & AI student at IIT Guwahati, his 14 completed technical courses (like DA 210 Time Series and DA 261 ML), and his terminal-first engineering philosophy.";
+      synthesis = "You are on Arun's About page, showcasing his background as a 3rd-year B.Sc. Data Science & AI student at IIT Guwahati, his 14 completed technical courses (like DA 210 Time Series and DA 261 ML), and his terminal-first engineering philosophy.";
     } else if (path.includes("healthcare")) {
       synthesis = "You are inspecting Arun's Healthcare Appointment Assistant (MyEyeDr). It integrates Tars NeoAgent conversational triage with live bi-directional Salesforce CRM webhooks for automated lead booking and patient intake.";
     } else if (path.includes("financial") || path.includes("finai")) {
@@ -102,18 +102,18 @@ ${state.query}`;
     } else if (path.includes("harness")) {
       synthesis = "You are testing the Autonomous Agentic Evaluation & Guardrail Harness itself — a LangGraph cyclic state machine enforcing zero-latency input guardrails and SQLite memory.";
     } else if (path.includes("failures")) {
-      synthesis = "You are viewing the Honest Engineering Incident Directory, detailing real post-mortems and root-cause fixes across Arun's deployed AWS EC2 systems.";
+      synthesis = "You are viewing the Honest Engineering Incident Directory, detailing real post-mortems and root-cause fixes across Arun's deployed systems.";
     } else {
-      synthesis = "You are on the ARUN.SYS main console, featuring 6 audited production AI systems deployed across AWS EC2, complete with live benchmarks and verifiable architectural workflows.";
+      synthesis = "You are on the ARUN.SYS main console, featuring 6 audited production AI systems engineered across cloud edge and container runtimes, complete with live benchmarks and verifiable architectural workflows.";
     }
   } else if (q.includes("arima") || q.includes("trading") || q.includes("quant")) {
-    synthesis = "Arun's quantitative modeling expertise is proven in his Algorithmic Trading Agent deployed on AWS EC2. Rather than theoretical exercises, Arun combined ARIMA time-series forecasting with GARCH(1,1) volatility modeling to achieve ~5% MAPE on live 30-day market data, backed by automated stop-loss safety guardrails operating at a verified 31.8ms decision latency.";
+    synthesis = "Arun's quantitative modeling expertise is proven in his Algorithmic Trading Agent. Rather than theoretical exercises, Arun combined ARIMA time-series forecasting with GARCH(1,1) volatility modeling to achieve ~5% MAPE on live 30-day market data, backed by automated stop-loss safety guardrails operating at a verified 31.8ms decision latency.";
   } else if (q.includes("faiss") || q.includes("rag") || q.includes("concurrency")) {
     synthesis = "In his Enterprise Document RAG system, Arun engineered a hybrid retrieval pipeline pairing BM25 keyword search with FAISS dense vector embeddings. During production horizontal scaling, he isolated and mitigated a critical reader-writer index lock contention failure by building an asynchronous lock coordinator, reducing research latency by 85%.";
   } else if (q.includes("iit") || q.includes("course") || q.includes("education") || q.includes("study")) {
-    synthesis = "Arun is a 2nd-year B.Sc. (Hons.) Data Science & AI student at IIT Guwahati. He has completed 14 rigorous academic courses including Time Series Analysis (DA 210), Machine Learning (DA 261), Optimization (DA 203), and Algorithms (DA 111), directly applying theoretical mathematical models into containerized production services.";
+    synthesis = "Arun is a 3rd-year B.Sc. (Hons.) Data Science & AI student at IIT Guwahati. He has completed 14 rigorous academic courses including Time Series Analysis (DA 210), Machine Learning (DA 261), Optimization (DA 203), and Algorithms (DA 111), directly applying theoretical mathematical models into containerized production services.";
   } else if (q.includes("hire") || q.includes("why") || q.includes("role") || q.includes("candidate")) {
-    synthesis = "Arun is a terminal-first builder who takes full ownership of the hardest half of AI engineering: deployment, deterministic guardrails, database concurrency, and sub-second p95 latency. He has deployed 4 systems live on AWS EC2 and is immediately available for remote AI engineering roles.";
+    synthesis = "Arun is a terminal-first builder who takes full ownership of the hardest half of AI engineering: deployment, deterministic guardrails, database concurrency, and sub-second p95 latency. He has engineered 6 systems with 4 live in production and is immediately available for remote AI engineering roles.";
   } else if (state.retrievedFacts.length > 0) {
     const primary = state.retrievedFacts[0];
     synthesis = `Regarding ${primary.entity}: ${primary.content} This system is verified in production with a benchmark of ${primary.claimMetric}.`;

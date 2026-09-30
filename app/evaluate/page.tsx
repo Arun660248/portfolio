@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ROLES_DATA } from "@/data/roles";
 import { PROJECTS } from "@/data/projects";
+import JobDescriptionMatcher from "@/components/JobDescriptionMatcher";
 
 export default function EvaluatePage() {
   const [selectedRoleId, setSelectedRoleId] = useState<string>("agentic");
@@ -29,23 +30,26 @@ export default function EvaluatePage() {
         <div className="space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 text-xs border border-emerald-500/40 bg-emerald-950/30 text-emerald-400 rounded">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            RECRUITER LENS // CANDIDATE EVALUATION DOSSIER
+            RECRUITER LENS // CANDIDATE EVALUATION &amp; ALIGNMENT
           </div>
 
           <h1 className="text-3xl font-bold tracking-tight text-zinc-100">
-            Role Fit Evaluation <span className="text-zinc-500 font-normal">// Evidence Matcher</span>
+            Role-Based Evidence Overview <span className="text-zinc-500 font-normal">// Job Matcher</span>
           </h1>
 
           <p className="text-zinc-400 text-sm max-w-3xl leading-relaxed">
-            Evaluate Arun Jyoti Chakraborty against your specific open requirements. Transparent evidence match 
-            scores, direct repository proofs, and 1-click ATS summary notes formatted for hiring managers.
+            Role-based evidence overview mapping Arun Jyoti Chakraborty&apos;s verified production systems to standard AI engineering specializations. Evaluate canonical role profiles below or test real-time alignment with your custom job description.
           </p>
         </div>
 
-        {/* Role Selector Tabs */}
+        {/* Interactive Custom Job Description Matcher */}
+        <JobDescriptionMatcher />
+
+        {/* Pre-Audited Role Evidence Profiles */}
         <div className="space-y-2">
-          <div className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">
-            Select Hiring Focus Lens:
+          <div className="flex flex-wrap items-center justify-between gap-1 text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">
+            <span>Or Inspect Pre-Audited Canonical Role Profiles:</span>
+            <span className="text-zinc-600">Formula: 40% Architecture + 30% Mitigations + 30% Test Rigor</span>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
             {ROLES_DATA.map((role) => {

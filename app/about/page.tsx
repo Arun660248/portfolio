@@ -49,7 +49,7 @@ export default function AboutPage() {
               AVAILABLE FOR REMOTE ROLES
             </span>
             <span className="px-3 py-1 rounded border border-zinc-800 bg-zinc-950 text-zinc-300">
-              IIT GUWAHATI · 2ND YEAR B.SC. DS & AI
+              IIT GUWAHATI · 3RD YEAR B.SC. DS & AI
             </span>
             <span className="px-3 py-1 rounded border border-zinc-800 bg-zinc-950 text-zinc-400">
               WEST BENGAL, INDIA
@@ -62,9 +62,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="text-zinc-300 text-base max-w-3xl leading-relaxed">
-            While most students are still following tutorials, I&apos;ve deployed four live AI systems on AWS EC2 — 
-            a multi-agent quantitative research platform, an enterprise RAG system, an AI financial analyst agent, 
-            and a healthcare appointment chatbot with Salesforce integration. Each one is live right now.
+            While most students are still following tutorials, I architect and ship production-grade AI systems across cloud edge and container runtimes. My portfolio features four active production systems (Enterprise RAG on Streamlit, Cognitive Load Balancer on Hugging Face, Healthcare Assistant on Render, and Autonomous Agentic Eval on Vercel Edge) alongside two cost-optimized dormant systems archived with interactive sandboxes.
           </p>
         </div>
 
